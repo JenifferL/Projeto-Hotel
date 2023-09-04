@@ -62,4 +62,14 @@ public class HospedeController {
                 .orElseThrow(() -> new RuntimeException("Hóspede não encontrado"));
     }
 
+    @PatchMapping("/{id}/atualizar-nome")
+    public Hospede atualizarNomeHospede(@PathVariable Long id, @RequestParam String novoNome) {
+        return hospedeService.atualizarNome(id, novoNome);
+    }
+
+    @PatchMapping("/{id}/atualizar-sobrenome")
+    public Hospede atualizarSobrenomeHospede(@PathVariable Long id, @RequestParam String novoSobrenome) {
+        return hospedeService.atualizarSobrenome(id, novoSobrenome);
+    }
+
 }
